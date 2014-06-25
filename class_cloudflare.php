@@ -300,6 +300,16 @@ class cloudflare_api
         return $this->http_post($data);
     }
 
+
+    /**
+     * 4.6 - Update The Snapshot Of Your Site
+     * Alias for update_image($zoneid)
+     */
+    public function zone_grab($zoneid)
+    {
+        return $this->update_image($zoneid);
+    }
+
     /**
      * 4.7a - Whitelist IPs
      * You can add an IP address to your whitelist.
