@@ -167,6 +167,17 @@ class cloudflare_api
         return $this->http_post($data);
     }
 
+
+    /**
+     * 3.6 - Check The Threat Score For A Given IP
+     * Alias for threat_score($ip)
+     */
+    public function ip_lkup($ip)
+    {
+        return $this->threat_score($ip);
+    }
+
+
     /**
      * 3.7 - List All The Current Settings
      * This function retrieves all the current settings for a given domain.
@@ -179,7 +190,7 @@ class cloudflare_api
         );
         return $this->http_post($data);
     }
-    
+
     /**
      * Undocumented method
      * SEE: https://github.com/vexxhost/CloudFlare-API/pull/3
