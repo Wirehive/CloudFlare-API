@@ -393,6 +393,21 @@ class cloudflare_api
 
 
     /**
+     * 4.11 - Set Mirage2
+     * This function toggles mirage2 support.
+     */
+    public function mirage2($domain, $mode)
+    {
+        $data = array(
+            'a' => 'mirage2',
+            'z' => $domain,
+            'v' => $mode
+        );
+        return $this->http_post($data);
+    }
+
+
+    /**
      * CLIENT API
      * Section 5
      * DNS Record Management
