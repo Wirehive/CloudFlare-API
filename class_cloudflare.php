@@ -41,6 +41,9 @@ class cloudflare_api
     //Stores the email login
     private $email;
 
+    //Stores whether to return the result as an associative array or a stdObject
+    private $as_array = false;
+
     /**
      * Make a new instance of the API client
      */
@@ -68,6 +71,11 @@ class cloudflare_api
     public function setToken($token_key)
     {
         $this->token_key = $token_key;
+    }
+
+    public function setReturnAsArray($type)
+    {
+        $this->as_array = $type;
     }
 
 
@@ -608,7 +616,7 @@ class cloudflare_api
                 'error' => $error
             );
         } else {
-            return json_decode($http_result);
+            return json_decode($http_result, $this->as_array);
         }
     }
 }
