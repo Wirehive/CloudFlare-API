@@ -507,6 +507,16 @@ class cloudflare_api
 
 
     /**
+     * 5.3 - Delete A DNS Record
+     * Alias for delete_dns_record($domain, $id)
+     */
+    public function rec_delete($domain, $id)
+    {
+        return $this->delete_dns_record($domain, $id);
+    }
+
+
+    /**
      * HOST API
      * Section 3
      * Specific Host Provider Operations
