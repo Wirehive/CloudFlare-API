@@ -366,7 +366,7 @@ class cloudflare_api
         $data = array(
             'a' => 'ipv46',
             'z' => $domain,
-            'v' => ($mode == true) ? 1 : 0
+            'v' => ($mode == true) ? 3 : 0
         );
         return $this->http_post($data);
     }
